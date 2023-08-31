@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Song info</h3>
+    <p>Title: {{song.title}}</p>
+    <p>Artist: {{song.artist}}</p>
+    <p>Rating: {{song.rating}}</p>
+    <p>Added by: {{song.user.name}}</p>
+    <p>Added on: {{song.created_at}}</p>
+    <hr>
+    <p><a href="/songs/{{song.id}}/update">Edit Song</a></p>
+    <p><a href="/songs/{{song.id}}/delete">Delete Song</a></p>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Songs added by {{user.name}}</h3>
+    {% for song in user.songs %}
+        <p>{{song.title}} by {{song.artist}} | <a href="/songs/{{song.id}}">VIEW</a></p>
+    {% endfor %}
+</body>
+</html>

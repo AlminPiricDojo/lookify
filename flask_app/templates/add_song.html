@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Add Song</h3>
+    <form action="/songs/add" method="POST">
+        <label>Title</label>
+        <input type="text" name="title" placeholder="Song Title">
+        <input type="text" name="artist" placeholder="Song Artist">
+        <input type="number" name="rating" placeholder="Song Rating">
+        <select name="user_id">
+            {% for user in users %}
+                <option value="{{user.id}}">{{user.name}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
